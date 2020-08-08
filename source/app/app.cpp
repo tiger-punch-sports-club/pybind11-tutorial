@@ -42,15 +42,10 @@ void main ()
 
     auto sys = pybind11::module::import ("sys");
     pybind11::print (sys.attr ("path"));
-    auto hello_module = pybind11::module::import ("hello");
-    auto magic_function = hello_module.attr ("magic");
 
     MyData data {};
     data.x = 33.0f;
-    
-    magic_function (&data);
-
-    
+       
     
     printf ("end\n");
 }
