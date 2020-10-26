@@ -36,7 +36,7 @@ PYBIND11_EMBEDDED_MODULE (embeddedmodule, module)
     .def_readwrite ("x", &MyData::x);
 }
 
-void main ()
+int main ()
 {
     pybind11::scoped_interpreter guard{};
 
@@ -45,7 +45,7 @@ void main ()
 
     MyData data {};
     data.x = 33.0f;
-       
-    
+           
     printf ("end\n");
+    return 0;
 }
